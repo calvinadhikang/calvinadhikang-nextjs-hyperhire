@@ -11,6 +11,10 @@ export default function ProfileNav () {
     const [userData, setUserData] = useState<User | null>(null);
     const [isLogout, setIsLogout] = useState(false)
 
+    if (userData != null) {
+        console.log(userData)
+    }
+
     useEffect(() => {
         setUserData(getUser())
     }, [isLogout])
