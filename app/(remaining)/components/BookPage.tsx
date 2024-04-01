@@ -1,16 +1,12 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Book, Tag } from "../interfaces/interfaces"
 import BookItem from "./BookItem"
 import axios from "axios"
-import API_URLS from "../api/apiConfig"
-import { useRouter } from "next/navigation"
 import InfiniteScroll from "react-infinite-scroll-component"
-import { faL } from "@fortawesome/free-solid-svg-icons"
 
 export default function BookPage () {
-    const router = useRouter()
     const [search, setSearch] = useState('')
     const [books, setBooks] = useState<Book[]>([])
     const [tags, setTags] = useState<Tag[]>([])
@@ -19,7 +15,6 @@ export default function BookPage () {
     const [hasMore, setHasMore] = useState(true)
     const [page, setPage] = useState(1)
     const limit = 8
-    const prevSearch = useRef('')
 
     const fetchBooks = async () => {
         if (loading) {
@@ -105,11 +100,6 @@ export default function BookPage () {
                     <div className="mb-3 flex">
                         <input type="text" placeholder="Search by title..."className="input input-primary flex-1" value={search} onChange={(e) => setSearch(e.target.value)} />
                     </div>
-                    
-                    {/* <p>{books.length}</p>
-                    <p>{page}</p>
-                    <p>{limit}</p> */}
-                        
                     <InfiniteScroll
                         dataLength={books.length}
                         next={fetchBooks}
