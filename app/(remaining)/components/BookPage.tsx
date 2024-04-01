@@ -80,7 +80,7 @@ export default function BookPage () {
     return(
         <div className="">
             <div className="flex">
-                <div className="w-1/3 rounded-badge">
+                <div className="w-1/3 rounded-xl border h-min">
                     <div className="text-xl font-bold text-center mt-3">Filters</div>
                     <div className="collapse collapse-plus">
                         <input type="checkbox" />

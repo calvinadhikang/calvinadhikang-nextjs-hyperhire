@@ -50,6 +50,7 @@ export default function Page(){
             }
 
         }else{
+            showToast("You must login to see carts !", 'info')
             router.push('/')
         }
         setLoading(false)
@@ -64,8 +65,7 @@ export default function Page(){
     const handleDelete = () => {
         router.push('/')
     }
-
-        
+  
     const handleCheckout = async () => {
         const user: User | null = getUser()
         if (user != null) {
@@ -87,6 +87,12 @@ export default function Page(){
             <div className="w-screen max-w-7xl m-auto">
                 <div className="mt-10">
                     <h1 className="text-3xl font-medium">Cart</h1>
+                    <div className="text-sm breadcrumbs">
+                    <ul>
+                        <li><Link href={'/'}>Home</Link></li> 
+                        <li>Cart</li> 
+                    </ul>
+                    </div>
                     { carts.length > 0 ? 
                     <div>
                         <InfiniteScroll

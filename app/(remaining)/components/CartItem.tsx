@@ -38,10 +38,6 @@ export default function CartItem ({
                     <div className="space-y-2 flex-1">
                         <p className="font-medium text-2xl">{cart.book.title}</p>
                         <p className="text-xl">$ {cart.book.price} x {cart.quantity} pcs</p>
-                        {/* <div className="space-x-2 py-8"> */}
-                            {/* <button className="btn btn-primary" onClick={() => handleCheckout()}>Purchase</button>
-                            <button className="btn btn-error" onClick={()=> showModal() }>Cancel</button> */}
-                        {/* </div> */}
                     </div>
                 </div>
                 <p className="font-medium text-3xl">$ {cart.subtotal}</p>
