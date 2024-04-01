@@ -118,7 +118,7 @@ export default function BookPage () {
                         endMessage={<div className="text-center mt-10">No More Data</div>}
                         scrollThreshold={0.8}
                     >
-                        <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-5 ">
+                        <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-5 pb-5">
                             {books && books.map((book) => {
                                 if (book.title.toLowerCase().includes(search.toLowerCase())) {
                                     if (queryTags.length > 0) {
