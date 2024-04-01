@@ -103,11 +103,11 @@ export default function Page(){
                             endMessage={<div className="text-center mt-10">No More Data</div>}
                             scrollThreshold={0.8}
                         >
-                        <div className="flex flex-col flex-wrap gap-y-5 mt-5">
-                        {carts.map((cart) => 
-                            <CartItem key={cart.id} cart={cart} onAction={() => handleDelete()}></CartItem>
-                        )}
-                        </div>
+                            <div className="flex flex-col flex-wrap gap-y-5 mt-5 pb-5">
+                                {carts.map((cart) => 
+                                    <CartItem key={cart.id} cart={cart} onAction={() => handleDelete()}></CartItem>
+                                )}
+                            </div>
                         </InfiniteScroll>
                         <div className="flex flex-col w-full justify-end items-end gap-2 my-5">
                             <p className="text-xl">Grand Total : $ {total}</p>
